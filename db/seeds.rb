@@ -9,11 +9,12 @@ puts "Cleaning database..."
 Restaurant.destroy_all
 
 puts "creating restaurants"
-10.times do |i|
+20.times do |i|
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
-    rating: rand(1..5)
+    rating: rand(1..5),
+    chef_name: ["Alan Ducasse", "Clare Smyth", "Monica Galetti", "Jamie Oliver"].sample
   )
   puts "Restaurant with id: #{restaurant.id} has been created"
 end
